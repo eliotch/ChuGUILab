@@ -11,9 +11,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.Font;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -152,9 +150,16 @@ public class SimpleGUI extends JFrame implements ActionListener, ItemListener, C
                 checkBox1.setSelected(false);
                 checkBox2.setSelected(false);
             } else if(text.equals("Open")){
-                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                setSize(200, 200);
-                setLocation(50, 50);
+                JFrame a=new JFrame();
+                setDefaultCloseOperation(a.EXIT_ON_CLOSE);
+                a.setSize(200, 200);
+                a.setLocation(400, 50);
+                JLabel b=new JLabel("HELLO");
+                b.setFont(new Font("Arial", Font.ITALIC, 10));
+                JPanel c=new JPanel();
+                c.add(b);
+                a.add(c, BorderLayout.CENTER);
+                a.setVisible(true);
             }
         }else if(source instanceof JMenuItem){
             JMenuItem a=(JMenuItem)source;
